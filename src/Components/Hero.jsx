@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import jonkoso from '../assets/jonkoso.jpg';
+import Jonkoso from '../assets/Jonkoso.jpg';
 
 export default function Hero() {
   return (
@@ -38,7 +38,7 @@ export default function Hero() {
         className="md:w-1/2 mt-10 md:mt-0"
       >
         <img
-          src={jonkoso}
+          src={Jonkoso}
           alt="Fashion showcase"
           className="w-full h-auto rounded-xl shadow-lg"
         />
