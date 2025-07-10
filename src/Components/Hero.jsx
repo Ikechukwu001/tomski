@@ -16,7 +16,7 @@ export default function Hero() {
         className="md:w-1/2 text-center md:text-left"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-          Where Heritage Meets Haute Couture
+          Where Peak <span className='text-black italic'>Nigerian</span> Fashion Meets Style
         </h1>
         <p className="text-lg md:text-xl mb-6 max-w-md">
           Discover timeless African fashion reimagined with a modern edge. Every stitch, every print tells a story of culture and class.
@@ -25,7 +25,7 @@ export default function Hero() {
           to="/feature"
           className="inline-block bg-[#5a2c1e] text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-[#3c1e12] transition"
         >
-          Explore Features
+          Explore Collection
         </Link>
       </motion.div>
 

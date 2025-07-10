@@ -1,67 +1,59 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+
 import Jonkoso from '../assets/Jonkoso.jpg';
 import Jonkoso2 from '../assets/Jonkoso2.jpg';
 import Jonkoso3 from '../assets/Jonkoso3.jpg';
 import Jonkoso4 from '../assets/Jonkoso4.jpg';
+import TraditionalOne from '../assets/Images/TraditionalOne.jpg';
+import TraditionalTwo from '../assets/Images/TraditionalTwo.jpg';
+import TraditionalThree from '../assets/Images/TraditionalThree.jpg';
+import TraditionalFour from '../assets/Images/TraditionalFour.jpg';
+import BaggyPantsOne from '../assets/Images/BaggyPantOne.jpg';
+import BaggyPantsTwo from '../assets/Images/BaggyPantTwo.jpg';
+import BaggyPantsThree from '../assets/Images/BaggyPantThree.jpg';
+import ClassicOne from '../assets/Images/ClassicJonkosoOne.jpg';
+import ClassicTwo from '../assets/Images/ClassicJonkosoTwo.jpg';
+import ClassicThree from '../assets/Images/ClassicJonkosoThree.jpg';
 
 const data = {
-  "Bridal Elegance": [
-    { id: 1, title: "Royal White", image: Jonkoso, price: "₦45,000" },
-    { id: 2, title: "Ivory Flow", image: Jonkoso2, price: "₦38,000" },
-    { id: 3, title: "Pearl Grace", image: Jonkoso3, price: "₦41,500" },
-    { id: 4, title: "Golden Veil", image: Jonkoso4, price: "₦50,000" },
-    { id: 5, title: "Silk Dream", image: Jonkoso, price: "₦48,000" },
-    { id: 6, title: "Lace Whisper", image: Jonkoso2, price: "₦46,000" },
-    { id: 7, title: "Blush Elegance", image: Jonkoso3, price: "₦49,000" },
-    { id: 8, title: "Vintage Charm", image: Jonkoso4, price: "₦44,000" },
-    { id: 9, title: "Satin Glow", image: Jonkoso, price: "₦47,000" },
+  "Traditional Couples Attire": [
+    { id: 1, title: "Traditional Attire 1", image: TraditionalOne, price: "₦---" },
+    { id: 2, title: "Traditional Attire 2", image: TraditionalTwo, price: "₦---" },
+    { id: 3, title: "Traditional Attire 3", image: TraditionalThree, price: "₦---" },
+    { id: 4, title: "Traditional Attire 4", image: TraditionalFour, price: "₦---" },
+    { id: 5, title: "Traditional Attire 5", image: TraditionalTwo, price: "₦---" },
+    { id: 6, title: "Traditional Attire 6", image: TraditionalThree, price: "₦---" },
+    { id: 7, title: "Traditional Attire 7", image: TraditionalOne, price: "₦---" },
+    { id: 8, title: "Traditional Attire 8", image: TraditionalTwo, price: "₦---" },
   ],
-    "Casual Chic": [
-    { id: 10, title: "Urban Vibe", image: Jonkoso2, price: "₦25,000" },
-    { id: 11, title: "Weekend Comfort", image: Jonkoso4, price: "₦22,000" },
-    { id: 12, title: "Street Style", image: Jonkoso3, price: "₦28,000" },
-    { id: 13, title: "Boho Bliss", image: Jonkoso, price: "₦30,000" },
-    { id: 14, title: "Denim Dreams", image: Jonkoso3, price: "₦26,000" },
-    { id: 15, title: "Casual Luxe", image: Jonkoso2, price: "₦27,000" },
-    { id: 16, title: "Effortless Elegance", image: Jonkoso4, price: "₦24,000" },
-    { id: 17, title: "Chic Layers", image: Jonkoso, price: "₦29,000" },
-    { id: 18, title: "Relaxed Fit", image: Jonkoso, price: "₦23,000" },
-    ],
-    "Evening Glam": [
-        { id: 19, title: "Midnight Sparkle", image: Jonkoso, price: "₦60,000" },
-        { id: 20, title: "Gala Glow", image: Jonkoso4, price: "₦65,000" },
-        { id: 21, title: "Red Carpet Ready", image: Jonkoso2, price: "₦70,000" },
-        { id: 22, title: "Elegant Noir", image: Jonkoso, price: "₦68,000" },
-        { id: 23, title: "Champagne Dreams", image: Jonkoso4, price: "₦72,000" },
-        { id: 24, title: "Starlit Elegance", image: Jonkoso3, price: "₦75,000" },
-        { id: 25, title: "Glamour Goddess", image: Jonkoso, price: "₦78,000" },
-        { id: 26, title: "Twilight Radiance", image: Jonkoso4, price: "₦80,000" },
-        { id: 27, title: "Crystal Chic", image: Jonkoso2, price: "₦82,000" },
-    ],
+  "Classic Premium Senator": [
+    { id: 10, title: "Premium Senator 1", image: ClassicOne, price: "₦---" },
+    { id: 11, title: "Premium Senator 2", image: Jonkoso4, price: "₦---" },
+    { id: 12, title: "Premium Senator 3", image: Jonkoso3, price: "₦---" },
+    { id: 13, title: "Premium Senator 4", image: Jonkoso, price: "₦---" },
+    { id: 14, title: "Premium Senator 5", image: Jonkoso2, price: "₦---" },
+    { id: 15, title: "Premium Senator 6", image: ClassicTwo, price: "₦---" },
+    { id: 16, title: "Premium Senator 7", image: ClassicThree, price: "₦---" },
+    { id: 17, title: "Premium Senator 8", image: Jonkoso, price: "₦---" },
+    { id: 18, title: "Premium Senator 9", image: Jonkoso3, price: "₦---" },
+  ],
+  "Baggy Pants": [
+    { id: 19, title: "Baggy Pants 1", image: BaggyPantsOne, price: "₦---" },
+    { id: 20, title: "Baggy Pants 2", image: BaggyPantsTwo, price: "₦---" },
+    { id: 21, title: "Baggy Pants 3", image: BaggyPantsThree, price: "₦---" },
+    { id: 22, title: "Baggy Pants 4", image: BaggyPantsOne, price: "₦---" },
+    { id: 23, title: "Baggy Pants 5", image: BaggyPantsTwo, price: "₦---" },
+    { id: 24, title: "Baggy Pants 6", image: BaggyPantsThree, price: "₦---" },
+    { id: 25, title: "Baggy Pants 7", image: BaggyPantsOne, price: "₦---" },
+    { id: 26, title: "Baggy Pants 8", image: BaggyPantsTwo, price: "₦---" },
+  ],
 };
 
 export default function GridFeature() {
   const rowRefs = useRef({});
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true });
-  const [dragLimits, setDragLimits] = useState({});
-
-  useEffect(() => {
-    const newLimits = {};
-    Object.keys(rowRefs.current).forEach((key) => {
-      const container = rowRefs.current[key];
-      if (container) {
-        const scrollWidth = container.scrollWidth;
-        const clientWidth = container.clientWidth;
-        newLimits[key] = {
-          left: -(scrollWidth - clientWidth),
-          right: 0,
-        };
-      }
-    });
-    setDragLimits(newLimits);
-  }, []);
 
   return (
     <motion.section
@@ -77,11 +69,15 @@ export default function GridFeature() {
         <div key={sectionTitle} className="relative">
           <h3 className="text-2xl font-semibold mb-4">{sectionTitle}</h3>
 
-          <div className="overflow-hidden" ref={(el) => (rowRefs.current[sectionTitle] = el)}>
+          <div
+            className="overflow-x-auto"
+            ref={(el) => (rowRefs.current[sectionTitle] = el)}
+          >
             <motion.div
-              drag="x"
-              dragConstraints={dragLimits[sectionTitle] || { left: 0, right: 0 }}
-              className="flex space-x-4 pb-4 cursor-grab active:cursor-grabbing"
+              className="flex space-x-4 pb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               {items.map((item) => (
                 <motion.div
@@ -96,7 +92,6 @@ export default function GridFeature() {
                     className="object-cover w-full h-full transition duration-300 opacity-90 hover:opacity-100"
                   />
 
-                  {/* Title overlay */}
                   <div className="absolute bottom-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent w-full p-4">
                     <h4 className="text-lg font-semibold text-white">{item.title}</h4>
                   </div>
@@ -112,7 +107,9 @@ export default function GridFeature() {
                       {item.price}
                     </p>
                     <a
-                      href={`https://wa.me/+2348131168712?text=Hi,%20I%27m%20interested%20in%20"${encodeURIComponent(item.title)}"%20for%20${encodeURIComponent(item.price)}.`}
+                      href={`https://wa.me/+2348131168712?text=Hi,%20I%27m%20interested%20in%20"${encodeURIComponent(
+                        item.title
+                      )}"%20for%20${encodeURIComponent(item.price)}.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-[#eab308] text-black font-semibold px-4 py-2 rounded-full hover:bg-yellow-500 transition"

@@ -23,7 +23,7 @@ export default function Header() {
         
         {/* Logo */}
         <Link to="/" className="text-xl font-bold">
-          OlaTomski
+          Awimotalo
         </Link>
 
         {/* Desktop Nav */}
@@ -31,8 +31,11 @@ export default function Header() {
           <Link to="/" className="px-4 py-2 hover:bg-[#3c1e12] rounded">
             Home
           </Link>
-          <Link to="/feature" className="px-4 py-2 hover:bg-[#3c1e12] rounded">
-            Feature
+          <Link to="/Collection" className="px-4 py-2 hover:bg-[#3c1e12] rounded">
+            Collection
+          </Link>
+          <Link to="/Order" className="px-4 py-2 hover:bg-[#3c1e12] rounded">
+            Order
           </Link>
         </div>
 
@@ -88,11 +91,18 @@ export default function Header() {
                   Home
                 </Link>
                 <Link
-                  to="/feature"
+                  to="/Collection"
                   className="block px-4 py-2 hover:bg-[#4a2619]"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Feature
+                  Collection
+                </Link>
+                <Link
+                  to="/Order"
+                  className="block px-4 py-2 hover:bg-[#4a2619]"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Order
                 </Link>
               </motion.div>
             )}

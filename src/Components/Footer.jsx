@@ -15,9 +15,8 @@ export default function Footer() {
         <div className="space-y-2">
           <h2 className="font-bold text-lg">Explore</h2>
           <nav className="flex flex-col space-y-1 text-sm">
-            <Link to="/feature" className="hover:text-[#5a2c1e] transition">Features</Link>
-            <Link to="/" className="hover:text-[#5a2c1e] transition">About</Link>
-            <Link to="/" className="hover:text-[#5a2c1e] transition">Book a Fitting</Link>
+            <Link to="/Collection" className="hover:text-[#5a2c1e] transition">Collection</Link>
+            <Link to="/Order" className="hover:text-[#5a2c1e] transition">How to Order</Link>
             <Link to="/" className="hover:text-[#5a2c1e] transition">Contact</Link>
           </nav>
         </div>
@@ -49,7 +48,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-sm text-center md:text-right mt-4 md:mt-0">
-          <p>© {new Date().getFullYear()} OlaTomski✂️ — All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Awimotalo✂️ — All rights reserved.</p>
         </div>
       </div>
     </motion.footer>
